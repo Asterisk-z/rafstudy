@@ -1,34 +1,39 @@
 <template>
-    <input type="checkbox" :value="value" v-model="proxyChecked"
-           id="checkbox1">
+  <input
+    type="checkbox"
+    :value="value"
+    v-model="proxyChecked"
+    class="custom-control-input"
+    id="customCheck1"
+  />
 </template>
 
 <script>
-import { defineComponent } from 'vue'
+import { defineComponent } from "vue";
 
 export default defineComponent({
-    emits: ['update:checked'],
+  emits: ["update:checked"],
 
-    props: {
-        checked: {
-            type: [Array, Boolean],
-            default: false,
-        },
-        value: {
-            default: null,
-        },
+  props: {
+    checked: {
+      type: [Array, Boolean],
+      default: false,
     },
-
-    computed: {
-        proxyChecked: {
-            get() {
-                return this.checked;
-            },
-
-            set(val) {
-                this.$emit("update:checked", val);
-            },
-        },
+    value: {
+      default: null,
     },
-})
+  },
+
+  computed: {
+    proxyChecked: {
+      get() {
+        return this.checked;
+      },
+
+      set(val) {
+        this.$emit("update:checked", val);
+      },
+    },
+  },
+});
 </script>
