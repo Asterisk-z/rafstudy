@@ -154,7 +154,7 @@
                 class="iq-waves-effect collapsed"
                 data-toggle="collapse"
                 aria-expanded="false"
-                ><i class="ri-booklet-line"></i><span>Academics</span
+                ><i class="ri-stack-line"></i><span>Academics</span
                 ><i class="ri-arrow-right-s-line iq-arrow-right"></i
               ></a>
               <ul
@@ -195,7 +195,7 @@
                 class="iq-waves-effect collapsed"
                 data-toggle="collapse"
                 aria-expanded="false"
-                ><i class="ri-list-check"></i><span>Study Material</span
+                ><i class="ri-sticky-note-line"></i><span>Study Material</span
                 ><i class="ri-arrow-right-s-line iq-arrow-right"></i
               ></a>
               <ul

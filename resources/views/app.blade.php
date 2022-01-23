@@ -26,6 +26,7 @@
     <link href='{{ asset("fullcalendar/timegrid/main.css") }}' rel='stylesheet' />
     <link href='{{ asset("fullcalendar/list/main.css") }}' rel='stylesheet' />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 
 
