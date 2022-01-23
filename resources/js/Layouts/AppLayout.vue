@@ -65,23 +65,50 @@
 
             <li>
               <a
-                href="#icons"
+                href="#admin"
                 class="iq-waves-effect collapsed"
                 data-toggle="collapse"
                 aria-expanded="false"
-                ><i class="ri-list-check"></i><span>Icons</span
+                ><i class="ri-user-settings-line"></i><span>Admin Section</span
                 ><i class="ri-arrow-right-s-line iq-arrow-right"></i
               ></a>
               <ul
-                id="icons"
+                id="admin"
                 class="iq-submenu collapse"
                 data-parent="#iq-sidebar-toggle"
               >
                 <li>
-                  <a href="#"><i class="ri-stack-line"></i>Dripicons</a>
+                  <a href="#"><i class="ri-stack-line"></i>Admission Query</a>
                 </li>
                 <li>
-                  <a href="#"><i class="ri-facebook-fill"></i>Font Awesome 5</a>
+                  <a href="#"><i class="ri-facebook-fill"></i>Visitor Book</a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill"></i>Complaint</a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill"></i>Postal Receive</a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill"></i>Postal Dispatch</a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill"></i>Phone Call Log</a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill"></i>Admin Setup</a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill"></i>Student Certificate</a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill"></i>Generate Certificate</a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill"></i>ID Card</a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill"></i>Generate ID Card</a>
                 </li>
               </ul>
             </li>
@@ -92,7 +119,7 @@
                 class="iq-waves-effect collapsed"
                 data-toggle="collapse"
                 aria-expanded="false"
-                ><i class="ri-list-check"></i><span>Student Info</span
+                ><i class="ri-user-3-line"></i><span>Student Info</span
                 ><i class="ri-arrow-right-s-line iq-arrow-right"></i
               ></a>
               <ul
@@ -127,7 +154,7 @@
                 class="iq-waves-effect collapsed"
                 data-toggle="collapse"
                 aria-expanded="false"
-                ><i class="ri-list-check"></i><span>Academics</span
+                ><i class="ri-booklet-line"></i><span>Academics</span
                 ><i class="ri-arrow-right-s-line iq-arrow-right"></i
               ></a>
               <ul
@@ -158,6 +185,368 @@
                 </li>
                 <li>
                   <a href="#"><i class="ri-facebook-fill"></i>Optional Subject</a>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <a
+                href="#material"
+                class="iq-waves-effect collapsed"
+                data-toggle="collapse"
+                aria-expanded="false"
+                ><i class="ri-list-check"></i><span>Study Material</span
+                ><i class="ri-arrow-right-s-line iq-arrow-right"></i
+              ></a>
+              <ul
+                id="material"
+                class="iq-submenu collapse"
+                data-parent="#iq-sidebar-toggle"
+              >
+                <li>
+                  <a href="#"><i class="ri-stack-line"></i>Upload Content</a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill"></i>Assignment</a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill"></i>Syllabus</a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill"></i>Other Downloads</a>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <a
+                href="#lesson"
+                class="iq-waves-effect collapsed"
+                data-toggle="collapse"
+                aria-expanded="false"
+                ><i class="ri-list-check"></i><span>Lesson Plan</span
+                ><i class="ri-arrow-right-s-line iq-arrow-right"></i
+              ></a>
+              <ul
+                id="lesson"
+                class="iq-submenu collapse"
+                data-parent="#iq-sidebar-toggle"
+              >
+                <li>
+                  <a href="#"><i class="ri-stack-line"></i>Lesson</a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill"></i>Topic</a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill"></i>Topic Overview</a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill"></i>Lesson Plan</a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill"></i>Lesson Plan Overview</a>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <a
+                href="#hr"
+                class="iq-waves-effect collapsed"
+                data-toggle="collapse"
+                aria-expanded="false"
+                ><i class="ri-list-check"></i><span>Human Resources</span
+                ><i class="ri-arrow-right-s-line iq-arrow-right"></i
+              ></a>
+              <ul
+                id="hr"
+                class="iq-submenu collapse"
+                data-parent="#iq-sidebar-toggle"
+              >
+                <li>
+                  <a href="#"><i class="ri-stack-line"></i>Designation</a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill"></i>Department</a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill"></i>Add Staff</a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill"></i>Staff Directory</a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill"></i>Staff Attendance</a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill"></i>Staff Attendance Report</a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill"></i>Payroll</a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill"></i>Payroll Report</a>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <a
+                href="#leave"
+                class="iq-waves-effect collapsed"
+                data-toggle="collapse"
+                aria-expanded="false"
+                ><i class="ri-list-check"></i><span>Leave</span
+                ><i class="ri-arrow-right-s-line iq-arrow-right"></i
+              ></a>
+              <ul
+                id="leave"
+                class="iq-submenu collapse"
+                data-parent="#iq-sidebar-toggle"
+              >
+                <li>
+                  <a href="#"><i class="ri-stack-line"></i>Leave Type</a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill"></i>Leave Define</a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill"></i>Approve Leave Request</a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill"></i>Pending Leave Request</a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill"></i>Apply Leave</a>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <a
+                href="#chat"
+                class="iq-waves-effect collapsed"
+                data-toggle="collapse"
+                aria-expanded="false"
+                ><i class="ri-list-check"></i><span>Chat</span
+                ><i class="ri-arrow-right-s-line iq-arrow-right"></i
+              ></a>
+              <ul
+                id="chat"
+                class="iq-submenu collapse"
+                data-parent="#iq-sidebar-toggle"
+              >
+                <li>
+                  <a href="#"><i class="ri-stack-line"></i>Chat Box</a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill"></i>Invitation</a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill"></i>Blocked User</a>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <a
+                href="#examination"
+                class="iq-waves-effect collapsed"
+                data-toggle="collapse"
+                aria-expanded="false"
+                ><i class="ri-list-check"></i><span>Human Resources</span
+                ><i class="ri-arrow-right-s-line iq-arrow-right"></i
+              ></a>
+              <ul
+                id="examination"
+                class="iq-submenu collapse"
+                data-parent="#iq-sidebar-toggle"
+              >
+                <li>
+                  <a href="#"><i class="ri-stack-line"></i>Marks Grade</a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill"></i>Exam Type</a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill"></i>Exam Setup</a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill"></i>Exam Schedule</a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill"></i>Send Marks By SMS</a>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <a
+                href="#library"
+                class="iq-waves-effect collapsed"
+                data-toggle="collapse"
+                aria-expanded="false"
+                ><i class="ri-list-check"></i><span>Library</span
+                ><i class="ri-arrow-right-s-line iq-arrow-right"></i
+              ></a>
+              <ul
+                id="library"
+                class="iq-submenu collapse"
+                data-parent="#iq-sidebar-toggle"
+              >
+                <li>
+                  <a href="#"><i class="ri-stack-line"></i>Book Categories</a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill"></i>Add Book</a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill"></i>Book List</a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill"></i>Add Member</a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill"></i>Issue/Return Book</a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill"></i>All Issued Book</a>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <a
+                href="#inventory"
+                class="iq-waves-effect collapsed"
+                data-toggle="collapse"
+                aria-expanded="false"
+                ><i class="ri-list-check"></i><span>Inventory</span
+                ><i class="ri-arrow-right-s-line iq-arrow-right"></i
+              ></a>
+              <ul
+                id="inventory"
+                class="iq-submenu collapse"
+                data-parent="#iq-sidebar-toggle"
+              >
+                <li>
+                  <a href="#"><i class="ri-stack-line"></i>Item Category</a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill"></i>Item List</a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill"></i>Item Store</a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill"></i>Supplier</a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill"></i>Item Receive</a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill"></i>Item Receive List</a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill">Item Sell</i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill">Item Issue</i></a>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <a
+                href="#domitory"
+                class="iq-waves-effect collapsed"
+                data-toggle="collapse"
+                aria-expanded="false"
+                ><i class="ri-list-check"></i><span>Domitory</span
+                ><i class="ri-arrow-right-s-line iq-arrow-right"></i
+              ></a>
+              <ul
+                id="domitory"
+                class="iq-submenu collapse"
+                data-parent="#iq-sidebar-toggle"
+              >
+                <li>
+                  <a href="#"><i class="ri-stack-line"></i>Room Type</a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill"></i>Domitory</a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill"></i>Domitory Rooms</a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill"></i>Student Domitory Report</a>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <a
+                href="#Reports"
+                class="iq-waves-effect collapsed"
+                data-toggle="collapse"
+                aria-expanded="false"
+                ><i class="ri-list-check"></i><span>Reports</span
+                ><i class="ri-arrow-right-s-line iq-arrow-right"></i
+              ></a>
+              <ul
+                id="Reports"
+                class="iq-submenu collapse"
+                data-parent="#iq-sidebar-toggle"
+              >
+                <li>
+                  <a href="#"><i class="ri-stack-line"></i>Student Report</a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill"></i>Guardian Reports</a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill"></i>Student History</a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill"></i>Student Login Report</a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill"></i>Fees Statement</a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill"></i>Balance Fees Report</a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill">Class Report</i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill">Exam Routine</i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill">Merit List Report</i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill">Online Exam Report</i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill">Mark Sheet Report</i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill">Tabulation Exam Report</i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill">Progress Card Report</i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill">User Log</i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill">Previous Report</i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill">Previous Record</i></a>
                 </li>
               </ul>
             </li>
