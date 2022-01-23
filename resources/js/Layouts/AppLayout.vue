@@ -1,280 +1,467 @@
 <template>
-    <div>
-        <Head :title="title" />
+  <!-- <div>
+    <Head :title="title" />
 
-        <jet-banner />
-
-        <div class="min-h-screen bg-gray-100">
-            <nav class="bg-white border-b border-gray-100">
-                <!-- Primary Navigation Menu -->
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="flex justify-between h-16">
-                        <div class="flex">
-                            <!-- Logo -->
-                            <div class="shrink-0 flex items-center">
-                                <Link :href="route('dashboard')">
-                                    <jet-application-mark class="block h-9 w-auto" />
-                                </Link>
-                            </div>
-
-                            <!-- Navigation Links -->
-                            <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                                <jet-nav-link :href="route('dashboard')" :active="route().current('dashboard')">
-                                    Dashboard
-                                </jet-nav-link>
-                            </div>
-                        </div>
-
-                        <div class="hidden sm:flex sm:items-center sm:ml-6">
-                            <div class="ml-3 relative">
-                                <!-- Teams Dropdown -->
-                                <jet-dropdown align="right" width="60" v-if="$page.props.jetstream.hasTeamFeatures">
-                                    <template #trigger>
-                                        <span class="inline-flex rounded-md">
-                                            <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:bg-gray-50 hover:text-gray-700 focus:outline-none focus:bg-gray-50 active:bg-gray-50 transition">
-                                                {{ $page.props.user.current_team.name }}
-
-                                                <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                                    <path fill-rule="evenodd" d="M10 3a1 1 0 01.707.293l3 3a1 1 0 01-1.414 1.414L10 5.414 7.707 7.707a1 1 0 01-1.414-1.414l3-3A1 1 0 0110 3zm-3.707 9.293a1 1 0 011.414 0L10 14.586l2.293-2.293a1 1 0 011.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd" />
-                                                </svg>
-                                            </button>
-                                        </span>
-                                    </template>
-
-                                    <template #content>
-                                        <div class="w-60">
-                                            <!-- Team Management -->
-                                            <template v-if="$page.props.jetstream.hasTeamFeatures">
-                                                <div class="block px-4 py-2 text-xs text-gray-400">
-                                                    Manage Team
-                                                </div>
-
-                                                <!-- Team Settings -->
-                                                <jet-dropdown-link :href="route('teams.show', $page.props.user.current_team)">
-                                                    Team Settings
-                                                </jet-dropdown-link>
-
-                                                <jet-dropdown-link :href="route('teams.create')" v-if="$page.props.jetstream.canCreateTeams">
-                                                    Create New Team
-                                                </jet-dropdown-link>
-
-                                                <div class="border-t border-gray-100"></div>
-
-                                                <!-- Team Switcher -->
-                                                <div class="block px-4 py-2 text-xs text-gray-400">
-                                                    Switch Teams
-                                                </div>
-
-                                                <template v-for="team in $page.props.user.all_teams" :key="team.id">
-                                                    <form @submit.prevent="switchToTeam(team)">
-                                                        <jet-dropdown-link as="button">
-                                                            <div class="flex items-center">
-                                                                <svg v-if="team.id == $page.props.user.current_team_id" class="mr-2 h-5 w-5 text-green-400" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                                                <div>{{ team.name }}</div>
-                                                            </div>
-                                                        </jet-dropdown-link>
-                                                    </form>
-                                                </template>
-                                            </template>
-                                        </div>
-                                    </template>
-                                </jet-dropdown>
-                            </div>
-
-                            <!-- Settings Dropdown -->
-                            <div class="ml-3 relative">
-                                <jet-dropdown align="right" width="48">
-                                    <template #trigger>
-                                        <button v-if="$page.props.jetstream.managesProfilePhotos" class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition">
-                                            <img class="h-8 w-8 rounded-full object-cover" :src="$page.props.user.profile_photo_url" :alt="$page.props.user.name" />
-                                        </button>
-
-                                        <span v-else class="inline-flex rounded-md">
-                                            <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition">
-                                                {{ $page.props.user.name }}
-
-                                                <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                                                </svg>
-                                            </button>
-                                        </span>
-                                    </template>
-
-                                    <template #content>
-                                        <!-- Account Management -->
-                                        <div class="block px-4 py-2 text-xs text-gray-400">
-                                            Manage Account
-                                        </div>
-
-                                        <jet-dropdown-link :href="route('profile.show')">
-                                            Profile
-                                        </jet-dropdown-link>
-
-                                        <jet-dropdown-link :href="route('api-tokens.index')" v-if="$page.props.jetstream.hasApiFeatures">
-                                            API Tokens
-                                        </jet-dropdown-link>
-
-                                        <div class="border-t border-gray-100"></div>
-
-                                        <!-- Authentication -->
-                                        <form @submit.prevent="logout">
-                                            <jet-dropdown-link as="button">
-                                                Log Out
-                                            </jet-dropdown-link>
-                                        </form>
-                                    </template>
-                                </jet-dropdown>
-                            </div>
-                        </div>
-
-                        <!-- Hamburger -->
-                        <div class="-mr-2 flex items-center sm:hidden">
-                            <button @click="showingNavigationDropdown = ! showingNavigationDropdown" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition">
-                                <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                                    <path :class="{'hidden': showingNavigationDropdown, 'inline-flex': ! showingNavigationDropdown }" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                                    <path :class="{'hidden': ! showingNavigationDropdown, 'inline-flex': showingNavigationDropdown }" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Responsive Navigation Menu -->
-                <div :class="{'block': showingNavigationDropdown, 'hidden': ! showingNavigationDropdown}" class="sm:hidden">
-                    <div class="pt-2 pb-3 space-y-1">
-                        <jet-responsive-nav-link :href="route('dashboard')" :active="route().current('dashboard')">
-                            Dashboard
-                        </jet-responsive-nav-link>
-                    </div>
-
-                    <!-- Responsive Settings Options -->
-                    <div class="pt-4 pb-1 border-t border-gray-200">
-                        <div class="flex items-center px-4">
-                            <div v-if="$page.props.jetstream.managesProfilePhotos" class="shrink-0 mr-3" >
-                                <img class="h-10 w-10 rounded-full object-cover" :src="$page.props.user.profile_photo_url" :alt="$page.props.user.name" />
-                            </div>
-
-                            <div>
-                                <div class="font-medium text-base text-gray-800">{{ $page.props.user.name }}</div>
-                                <div class="font-medium text-sm text-gray-500">{{ $page.props.user.email }}</div>
-                            </div>
-                        </div>
-
-                        <div class="mt-3 space-y-1">
-                            <jet-responsive-nav-link :href="route('profile.show')" :active="route().current('profile.show')">
-                                Profile
-                            </jet-responsive-nav-link>
-
-                            <jet-responsive-nav-link :href="route('api-tokens.index')" :active="route().current('api-tokens.index')" v-if="$page.props.jetstream.hasApiFeatures">
-                                API Tokens
-                            </jet-responsive-nav-link>
-
-                            <!-- Authentication -->
-                            <form method="POST" @submit.prevent="logout">
-                                <jet-responsive-nav-link as="button">
-                                    Log Out
-                                </jet-responsive-nav-link>
-                            </form>
-
-                            <!-- Team Management -->
-                            <template v-if="$page.props.jetstream.hasTeamFeatures">
-                                <div class="border-t border-gray-200"></div>
-
-                                <div class="block px-4 py-2 text-xs text-gray-400">
-                                    Manage Team
-                                </div>
-
-                                <!-- Team Settings -->
-                                <jet-responsive-nav-link :href="route('teams.show', $page.props.user.current_team)" :active="route().current('teams.show')">
-                                    Team Settings
-                                </jet-responsive-nav-link>
-
-                                <jet-responsive-nav-link :href="route('teams.create')" :active="route().current('teams.create')" v-if="$page.props.jetstream.canCreateTeams">
-                                    Create New Team
-                                </jet-responsive-nav-link>
-
-                                <div class="border-t border-gray-200"></div>
-
-                                <!-- Team Switcher -->
-                                <div class="block px-4 py-2 text-xs text-gray-400">
-                                    Switch Teams
-                                </div>
-
-                                <template v-for="team in $page.props.user.all_teams" :key="team.id">
-                                    <form @submit.prevent="switchToTeam(team)">
-                                        <jet-responsive-nav-link as="button">
-                                            <div class="flex items-center">
-                                                <svg v-if="team.id == $page.props.user.current_team_id" class="mr-2 h-5 w-5 text-green-400" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                                <div>{{ team.name }}</div>
-                                            </div>
-                                        </jet-responsive-nav-link>
-                                    </form>
-                                </template>
-                            </template>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-
-            <!-- Page Heading -->
-            <header class="bg-white shadow" v-if="$slots.header">
-                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                    <slot name="header"></slot>
-                </div>
-            </header>
-
-            <!-- Page Content -->
-            <main>
-                <slot></slot>
-            </main>
+    <div class="min-h-screen bg-gray-100">
+      <header class="bg-white shadow" v-if="$slots.header">
+        <div class="max-w-7`xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+          <slot name="header"></slot>
         </div>
+      </header>
+      <main>
+        <slot></slot>
+      </main>
     </div>
+  </div> -->
+
+  <!-- <div>
+
+    <div class="min-h-screen bg-gray-100">
+      <
+      <header class="bg-white shadow" v-if="$slots.header">
+        <div class="max-w-7`xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+          <slot name="header"></slot>
+        </div>
+      </header>
+
+    </div>
+
+
+  </div> -->
+
+  <div class="wrapper">
+    <Head :title="title" />
+    <!-- Sidebar  -->
+    <div class="iq-sidebar">
+      <div class="iq-sidebar-logo d-flex justify-content-between">
+        <a href="#">
+          <img src="images/logo/logo.svg" class="img-fluid" alt="" />
+          <span>SMS</span>
+        </a>
+        <div class="iq-menu-bt-sidebar">
+          <div class="iq-menu-bt align-self-center">
+            <div class="wrapper-menu">
+              <div class="main-circle">
+                <i class="ri-arrow-left-s-line"></i>
+              </div>
+              <div class="hover-circle">
+                <i class="ri-arrow-right-s-line"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="sidebar-scrollbar">
+        <nav class="iq-sidebar-menu">
+          <ul id="iq-sidebar-toggle" class="iq-menu">
+            <li class="iq-menu-title">
+              <i class="ri-subtract-line"></i><span>Menu</span>
+            </li>
+            <li class="">
+              <a href="#" class="iq-waves-effect"
+                ><i class="ri-home-4-line"></i><span>Dashboard</span></a
+              >
+            </li>
+
+            <li>
+              <a
+                href="#icons"
+                class="iq-waves-effect collapsed"
+                data-toggle="collapse"
+                aria-expanded="false"
+                ><i class="ri-list-check"></i><span>Icons</span
+                ><i class="ri-arrow-right-s-line iq-arrow-right"></i
+              ></a>
+              <ul
+                id="icons"
+                class="iq-submenu collapse"
+                data-parent="#iq-sidebar-toggle"
+              >
+                <li>
+                  <a href="#"><i class="ri-stack-line"></i>Dripicons</a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill"></i>Font Awesome 5</a>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <a
+                href="#student"
+                class="iq-waves-effect collapsed"
+                data-toggle="collapse"
+                aria-expanded="false"
+                ><i class="ri-list-check"></i><span>Student Info</span
+                ><i class="ri-arrow-right-s-line iq-arrow-right"></i
+              ></a>
+              <ul
+                id="student"
+                class="iq-submenu collapse"
+                data-parent="#iq-sidebar-toggle"
+              >
+                <li>
+                  <a href="#"><i class="ri-stack-line"></i>Student category</a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill"></i>Add Student</a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill"></i>Student List</a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill"></i>Student Attendance Report</a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill"></i>Student Group</a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill"></i>Disabled Student</a>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <a
+                href="#academics"
+                class="iq-waves-effect collapsed"
+                data-toggle="collapse"
+                aria-expanded="false"
+                ><i class="ri-list-check"></i><span>Academics</span
+                ><i class="ri-arrow-right-s-line iq-arrow-right"></i
+              ></a>
+              <ul
+                id="academics"
+                class="iq-submenu collapse"
+                data-parent="#iq-sidebar-toggle"
+              >
+                <li>
+                  <a href="#"><i class="ri-stack-line"></i>Optional Subject</a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill"></i>Section</a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill"></i>Class</a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill"></i>Subjects</a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill"></i>Class Room</a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill"></i>Assign Class Teacher</a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill"></i>Class Routine</a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill"></i>Optional Subject</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <div class="p-3"></div>
+      </div>
+    </div>
+    <!-- TOP Nav Bar -->
+    <div class="iq-top-navbar">
+      <div class="iq-navbar-custom">
+        <div class="iq-sidebar-logo">
+          <div class="top-logo">
+            <a href="#" class="logo">
+              <img src="images/logo/logo.svg" class="img-fluid" alt="" />
+              <span>SMS</span>
+            </a>
+          </div>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-light p-0">
+          <div class="navbar-left">
+            <div class="iq-search-bar">
+              <form action="#" class="searchbox">
+                <input
+                  type="text"
+                  class="text search-input"
+                  placeholder="Type here to search..."
+                />
+                <a class="search-link" href="#"
+                  ><i class="ri-search-line"></i
+                ></a>
+              </form>
+            </div>
+          </div>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-label="Toggle navigation"
+          >
+            <i class="ri-menu-3-line"></i>
+          </button>
+          <div class="iq-menu-bt align-self-center">
+            <div class="wrapper-menu">
+              <div class="main-circle">
+                <i class="ri-arrow-left-s-line"></i>
+              </div>
+              <div class="hover-circle">
+                <i class="ri-arrow-right-s-line"></i>
+              </div>
+            </div>
+          </div>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto navbar-list">
+              <li class="nav-item">
+                <a href="#" class="search-toggle iq-waves-effect">
+                  <div id="lottie-beil"></div>
+                  <span class="bg-danger dots"></span>
+                </a>
+                <div class="iq-sub-dropdown">
+                  <div class="iq-card shadow-none m-0">
+                    <div class="iq-card-body p-0">
+                      <div class="bg-primary p-3">
+                        <h5 class="mb-0 text-white">
+                          All Notifications<small
+                            class="badge badge-light float-right pt-1"
+                            >0</small
+                          >
+                        </h5>
+                      </div>
+                      <a href="#" class="iq-sub-card">
+                        <div class="media align-items-center">
+                          <div class="">
+                            <img
+                              class="avatar-40 rounded"
+                              src="images/user/01.jpg"
+                              alt=""
+                            />
+                          </div>
+                          <div class="media-body ml-3">
+                            <h6 class="mb-0">Emma Watson Nik</h6>
+                            <small class="float-right font-size-12"
+                              >Just Now</small
+                            >
+                            <p class="mb-0">95 MB</p>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="nav-item dropdown">
+                <a href="#" class="search-toggle iq-waves-effect">
+                  <div id="lottie-mail"></div>
+                  <span class="bg-primary count-mail"></span>
+                </a>
+                <div class="iq-sub-dropdown">
+                  <div class="iq-card shadow-none m-0">
+                    <div class="iq-card-body p-0">
+                      <div class="bg-primary p-3">
+                        <h5 class="mb-0 text-white">
+                          All Messages<small
+                            class="badge badge-light float-right pt-1"
+                            >0</small
+                          >
+                        </h5>
+                      </div>
+                      <a href="#" class="iq-sub-card">
+                        <div class="media align-items-center">
+                          <div class="">
+                            <img
+                              class="avatar-40 rounded"
+                              src="images/user/01.jpg"
+                              alt=""
+                            />
+                          </div>
+                          <div class="media-body ml-3">
+                            <h6 class="mb-0">Nik Emma Watson</h6>
+                            <small class="float-left font-size-12"
+                              >13 Jun</small
+                            >
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <ul class="navbar-list">
+            <li>
+              <a
+                href="#"
+                class="
+                  search-toggle
+                  iq-waves-effect
+                  d-flex
+                  align-items-center
+                  bg-primary
+                  rounded
+                "
+              >
+                <img
+                  src="images/user/1.jpg"
+                  class="img-fluid rounded mr-3"
+                  alt="user"
+                />
+                <div class="caption">
+                  <h6 class="mb-0 line-height text-white">Odey Patrick</h6>
+                  <span class="font-size-12 text-white">Available</span>
+                </div>
+              </a>
+              <div class="iq-sub-dropdown iq-user-dropdown">
+                <div class="iq-card shadow-none m-0">
+                  <div class="iq-card-body p-0">
+                    <div class="bg-primary p-3">
+                      <h5 class="mb-0 text-white line-height">
+                        Hello Odey Patrick
+                      </h5>
+                      <span class="text-white font-size-12">Available</span>
+                    </div>
+                    <a
+                      href="profile.html"
+                      class="iq-sub-card iq-bg-primary-hover"
+                    >
+                      <div class="media align-items-center">
+                        <div class="rounded iq-card-icon iq-bg-primary">
+                          <i class="ri-file-user-line"></i>
+                        </div>
+                        <div class="media-body ml-3">
+                          <h6 class="mb-0">My Profile</h6>
+                          <p class="mb-0 font-size-12">
+                            View personal profile details.
+                          </p>
+                        </div>
+                      </div>
+                    </a>
+                    <a
+                      href="profile-edit.html"
+                      class="iq-sub-card iq-bg-primary-hover"
+                    >
+                      <div class="media align-items-center">
+                        <div class="rounded iq-card-icon iq-bg-primary">
+                          <i class="ri-profile-line"></i>
+                        </div>
+                        <div class="media-body ml-3">
+                          <h6 class="mb-0">Edit Profile</h6>
+                          <p class="mb-0 font-size-12">
+                            Modify your personal details.
+                          </p>
+                        </div>
+                      </div>
+                    </a>
+                    <a
+                      href="account-setting.html"
+                      class="iq-sub-card iq-bg-primary-hover"
+                    >
+                      <div class="media align-items-center">
+                        <div class="rounded iq-card-icon iq-bg-primary">
+                          <i class="ri-account-box-line"></i>
+                        </div>
+                        <div class="media-body ml-3">
+                          <h6 class="mb-0">Account settings</h6>
+                          <p class="mb-0 font-size-12">
+                            Manage your account parameters.
+                          </p>
+                        </div>
+                      </div>
+                    </a>
+                    <a
+                      href="privacy-setting.html"
+                      class="iq-sub-card iq-bg-primary-hover"
+                    >
+                      <div class="media align-items-center">
+                        <div class="rounded iq-card-icon iq-bg-primary">
+                          <i class="ri-lock-line"></i>
+                        </div>
+                        <div class="media-body ml-3">
+                          <h6 class="mb-0">Privacy Settings</h6>
+                          <p class="mb-0 font-size-12">
+                            Control your privacy parameters.
+                          </p>
+                        </div>
+                      </div>
+                    </a>
+                    <div class="d-inline-block w-100 text-center p-3">
+                      <a
+                        class="bg-primary iq-sign-btn"
+                        href="sign-in.html"
+                        role="button"
+                        >Sign out<i class="ri-login-box-line ml-2"></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <!-- TOP Nav Bar END -->
+    <!-- Page Content  -->
+    <div id="content-page" class="content-page">
+      <div class="container-fluid">
+        <slot></slot>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
-    import { defineComponent } from 'vue'
-    import JetApplicationMark from '@/Jetstream/ApplicationMark.vue'
-    import JetBanner from '@/Jetstream/Banner.vue'
-    import JetDropdown from '@/Jetstream/Dropdown.vue'
-    import JetDropdownLink from '@/Jetstream/DropdownLink.vue'
-    import JetNavLink from '@/Jetstream/NavLink.vue'
-    import JetResponsiveNavLink from '@/Jetstream/ResponsiveNavLink.vue'
-    import { Head, Link } from '@inertiajs/inertia-vue3';
+import { defineComponent } from "vue";
+import JetApplicationMark from "@/Jetstream/ApplicationMark.vue";
+import JetBanner from "@/Jetstream/Banner.vue";
+import JetDropdown from "@/Jetstream/Dropdown.vue";
+import JetDropdownLink from "@/Jetstream/DropdownLink.vue";
+import JetNavLink from "@/Jetstream/NavLink.vue";
+import JetResponsiveNavLink from "@/Jetstream/ResponsiveNavLink.vue";
+import { Head, Link } from "@inertiajs/inertia-vue3";
 
-    export default defineComponent({
-        props: {
-            title: String,
+export default defineComponent({
+  props: {
+    title: String,
+  },
+
+  components: {
+    Head,
+    JetApplicationMark,
+    JetBanner,
+    JetDropdown,
+    JetDropdownLink,
+    JetNavLink,
+    JetResponsiveNavLink,
+    Link,
+  },
+
+  data() {
+    return {
+      showingNavigationDropdown: false,
+    };
+  },
+
+  methods: {
+    switchToTeam(team) {
+      this.$inertia.put(
+        route("current-team.update"),
+        {
+          team_id: team.id,
         },
-
-        components: {
-            Head,
-            JetApplicationMark,
-            JetBanner,
-            JetDropdown,
-            JetDropdownLink,
-            JetNavLink,
-            JetResponsiveNavLink,
-            Link,
-        },
-
-        data() {
-            return {
-                showingNavigationDropdown: false,
-            }
-        },
-
-        methods: {
-            switchToTeam(team) {
-                this.$inertia.put(route('current-team.update'), {
-                    'team_id': team.id
-                }, {
-                    preserveState: false
-                })
-            },
-
-            logout() {
-                this.$inertia.post(route('logout'));
-            },
+        {
+          preserveState: false,
         }
-    })
+      );
+    },
+
+    logout() {
+      this.$inertia.post(route("logout"));
+    },
+  },
+});
 </script>
