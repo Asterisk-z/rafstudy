@@ -85,6 +85,82 @@
                 </li>
               </ul>
             </li>
+
+            <li>
+              <a
+                href="#student"
+                class="iq-waves-effect collapsed"
+                data-toggle="collapse"
+                aria-expanded="false"
+                ><i class="ri-list-check"></i><span>Student Info</span
+                ><i class="ri-arrow-right-s-line iq-arrow-right"></i
+              ></a>
+              <ul
+                id="student"
+                class="iq-submenu collapse"
+                data-parent="#iq-sidebar-toggle"
+              >
+                <li>
+                  <a href="#"><i class="ri-stack-line"></i>Student category</a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill"></i>Add Student</a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill"></i>Student List</a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill"></i>Student Attendance Report</a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill"></i>Student Group</a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill"></i>Disabled Student</a>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <a
+                href="#academics"
+                class="iq-waves-effect collapsed"
+                data-toggle="collapse"
+                aria-expanded="false"
+                ><i class="ri-list-check"></i><span>Academics</span
+                ><i class="ri-arrow-right-s-line iq-arrow-right"></i
+              ></a>
+              <ul
+                id="academics"
+                class="iq-submenu collapse"
+                data-parent="#iq-sidebar-toggle"
+              >
+                <li>
+                  <a href="#"><i class="ri-stack-line"></i>Optional Subject</a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill"></i>Section</a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill"></i>Class</a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill"></i>Subjects</a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill"></i>Class Room</a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill"></i>Assign Class Teacher</a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill"></i>Class Routine</a>
+                </li>
+                <li>
+                  <a href="#"><i class="ri-facebook-fill"></i>Optional Subject</a>
+                </li>
+              </ul>
+            </li>
           </ul>
         </nav>
         <div class="p-3"></div>
