@@ -1,21 +1,5 @@
 <template>
-    <!-- <app-layout title="Dashboard">
-        <template #header>
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                Dashboard
-            </h2>
-        </template>
-
-        <div class="py-12">
-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                    <welcome />
-                </div>
-            </div>
-        </div>
-    </app-layout> -->
-
-    <div class="page-wrapper" id="pageWrapper">
+<div class="page-wrapper" id="pageWrapper">
         <!-- Page Header Start-->
         <div class="page-main-header">
             <div class="main-header-right row m-0">
@@ -194,7 +178,7 @@
                                 <h3>Welcome Patrick(Super Admin)</h3>
                             </div>
                             <div class="col-sm-6">
-
+                                
                             </div>
                         </div>
                     </div>
@@ -268,7 +252,7 @@
                                             </div>
                                         </div>
                                         <div class="col-xl-6 col-xs-12 col-md-6 col-sm-6">
-
+                                           
                                         </div>
                                     </div>
                                 </div>
@@ -310,6 +294,7 @@
 </script>
 
 <style>
+
 
     .logo {
         max-width: 35px !important;
