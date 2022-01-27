@@ -51,120 +51,7 @@
           </div>
         </div>
       </div>
-      <div id="sidebar-scrollbar">
-        <nav class="iq-sidebar-menu">
-          <ul id="iq-sidebar-toggle" class="iq-menu">
-            <li class="iq-menu-title">
-              <i class="ri-subtract-line"></i><span>Menu</span>
-            </li>
-            <li class="">
-              <a href="#" class="iq-waves-effect"
-                ><i class="ri-home-4-line"></i><span>Dashboard</span></a
-              >
-            </li>
-
-            <li>
-              <a
-                href="#icons"
-                class="iq-waves-effect collapsed"
-                data-toggle="collapse"
-                aria-expanded="false"
-                ><i class="ri-list-check"></i><span>Icons</span
-                ><i class="ri-arrow-right-s-line iq-arrow-right"></i
-              ></a>
-              <ul
-                id="icons"
-                class="iq-submenu collapse"
-                data-parent="#iq-sidebar-toggle"
-              >
-                <li>
-                  <a href="#"><i class="ri-stack-line"></i>Dripicons</a>
-                </li>
-                <li>
-                  <a href="#"><i class="ri-facebook-fill"></i>Font Awesome 5</a>
-                </li>
-              </ul>
-            </li>
-
-            <li>
-              <a
-                href="#student"
-                class="iq-waves-effect collapsed"
-                data-toggle="collapse"
-                aria-expanded="false"
-                ><i class="ri-list-check"></i><span>Student Info</span
-                ><i class="ri-arrow-right-s-line iq-arrow-right"></i
-              ></a>
-              <ul
-                id="student"
-                class="iq-submenu collapse"
-                data-parent="#iq-sidebar-toggle"
-              >
-                <li>
-                  <a href="#"><i class="ri-stack-line"></i>Student category</a>
-                </li>
-                <li>
-                  <a href="#"><i class="ri-facebook-fill"></i>Add Student</a>
-                </li>
-                <li>
-                  <a href="#"><i class="ri-facebook-fill"></i>Student List</a>
-                </li>
-                <li>
-                  <a href="#"><i class="ri-facebook-fill"></i>Student Attendance Report</a>
-                </li>
-                <li>
-                  <a href="#"><i class="ri-facebook-fill"></i>Student Group</a>
-                </li>
-                <li>
-                  <a href="#"><i class="ri-facebook-fill"></i>Disabled Student</a>
-                </li>
-              </ul>
-            </li>
-
-            <li>
-              <a
-                href="#academics"
-                class="iq-waves-effect collapsed"
-                data-toggle="collapse"
-                aria-expanded="false"
-                ><i class="ri-list-check"></i><span>Academics</span
-                ><i class="ri-arrow-right-s-line iq-arrow-right"></i
-              ></a>
-              <ul
-                id="academics"
-                class="iq-submenu collapse"
-                data-parent="#iq-sidebar-toggle"
-              >
-                <li>
-                  <a href="#"><i class="ri-stack-line"></i>Optional Subject</a>
-                </li>
-                <li>
-                  <a href="#"><i class="ri-facebook-fill"></i>Section</a>
-                </li>
-                <li>
-                  <a href="#"><i class="ri-facebook-fill"></i>Class</a>
-                </li>
-                <li>
-                  <a href="#"><i class="ri-facebook-fill"></i>Subjects</a>
-                </li>
-                <li>
-                  <a href="#"><i class="ri-facebook-fill"></i>Class Room</a>
-                </li>
-                <li>
-                  <a href="#"><i class="ri-facebook-fill"></i>Assign Class Teacher</a>
-                </li>
-                <li>
-                  <a href="#"><i class="ri-facebook-fill"></i>Class Routine</a>
-                </li>
-                <li>
-                  <a href="#"><i class="ri-facebook-fill"></i>Optional Subject</a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </nav>
-        <div class="p-3"></div>
-      </div>
+      <Navigation />
     </div>
     <!-- TOP Nav Bar -->
     <div class="iq-top-navbar">
@@ -421,6 +308,7 @@ import JetBanner from "@/Jetstream/Banner.vue";
 import JetDropdown from "@/Jetstream/Dropdown.vue";
 import JetDropdownLink from "@/Jetstream/DropdownLink.vue";
 import JetNavLink from "@/Jetstream/NavLink.vue";
+import Navigation from "@/Jetstream/Navigation.vue";
 import JetResponsiveNavLink from "@/Jetstream/ResponsiveNavLink.vue";
 import { Head, Link } from "@inertiajs/inertia-vue3";
 
@@ -436,6 +324,7 @@ export default defineComponent({
     JetDropdown,
     JetDropdownLink,
     JetNavLink,
+    Navigation,
     JetResponsiveNavLink,
     Link,
   },
