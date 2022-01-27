@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\StudentCoontroller;
+use App\Http\Controllers\AdminController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -24,6 +26,12 @@ Route::get('/', function () {
     ]);
 });
 
+Route::get('admin/main', [AdminController::class, 'index'])->name('admin.main');
+Route::get('admin/students', [StudentCoontroller::class, 'index'])->name('admin.student.index');
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->name('dashboard');
+
+
+Route::redirect('register', 'login', 301);

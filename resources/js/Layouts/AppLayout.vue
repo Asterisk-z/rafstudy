@@ -51,6 +51,7 @@
           </div>
         </div>
       </div>
+<<<<<<< HEAD
       <div id="sidebar-scrollbar">
         <nav class="iq-sidebar-menu">
           <ul id="iq-sidebar-toggle" class="iq-menu">
@@ -554,6 +555,9 @@
         </nav>
         <div class="p-3"></div>
       </div>
+=======
+      <Navigation />
+>>>>>>> ce5c6c3675bf3b5301734801c7bd26077fddd033
     </div>
     <!-- TOP Nav Bar -->
     <div class="iq-top-navbar">
@@ -810,6 +814,7 @@ import JetBanner from "@/Jetstream/Banner.vue";
 import JetDropdown from "@/Jetstream/Dropdown.vue";
 import JetDropdownLink from "@/Jetstream/DropdownLink.vue";
 import JetNavLink from "@/Jetstream/NavLink.vue";
+import Navigation from "@/Jetstream/Navigation.vue";
 import JetResponsiveNavLink from "@/Jetstream/ResponsiveNavLink.vue";
 import { Head, Link } from "@inertiajs/inertia-vue3";
 
@@ -825,6 +830,7 @@ export default defineComponent({
     JetDropdown,
     JetDropdownLink,
     JetNavLink,
+    Navigation,
     JetResponsiveNavLink,
     Link,
   },
