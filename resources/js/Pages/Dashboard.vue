@@ -77,11 +77,9 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-6">
-        <div class="iq-card iq-card-block iq-card-stretch iq-card-height">
-          <div class="iq-card-body smaill-calender-home">
-            <input type="text" class="flatpicker d-none" />
-          </div>
+      <div class="col-lg-7">
+        <div class="iq-card iq-card-block iq-card-stretch iq-card-height p-2">
+          <div id="calendar"></div>
         </div>
       </div>
     </div>
@@ -92,6 +90,14 @@
 import { defineComponent } from "vue";
 import AppLayout from "@/Layouts/AppLayout.vue";
 import Welcome from "@/Jetstream/Welcome.vue";
+
+document.addEventListener("DOMContentLoaded", function () {
+  var calendarEl = document.getElementById("calendar");
+  var calendar = new FullCalendar.Calendar(calendarEl, {
+    initialView: "dayGridMonth",
+  });
+  calendar.render();
+});
 
 export default defineComponent({
   components: {
