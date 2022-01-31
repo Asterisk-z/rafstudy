@@ -21,10 +21,7 @@
     <!-- Responsive CSS -->
     <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
     <!-- Styles -->
-    <link href='{{ asset("fullcalendar/core/main.css") }}' rel='stylesheet' />
-    <link href='{{ asset("fullcalendar/daygrid/main.css") }}' rel='stylesheet' />
-    <link href='{{ asset("fullcalendar/timegrid/main.css") }}' rel='stylesheet' />
-    <link href='{{ asset("fullcalendar/list/main.css") }}' rel='stylesheet' />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
@@ -64,6 +61,9 @@
     <!-- Slick JavaScript -->
     <script src="{{ asset('js/slick.min.js') }}"></script>
     <!-- Select2 JavaScript -->
+    
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.min.js" integrity="sha256-XOMgUu4lWKSn8CFoJoBoGd9Q/OET+xrfGYSo+AKpFhE=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/locales-all.min.js"></script>
     <script src="{{ asset('js/select2.min.js') }}"></script>
     <!-- Owl Carousel JavaScript -->
     <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
