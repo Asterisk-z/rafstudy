@@ -48,7 +48,7 @@
             data-parent="#iq-sidebar-toggle"
           >
             <li>
-              <a :href="route('admin.student.index')"
+              <a :href="route('admin.student.category')"
                 ><i class="ri-stack-line"></i>Student category</a
               >
             </li>

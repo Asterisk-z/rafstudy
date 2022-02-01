@@ -30,6 +30,9 @@ use Inertia\Inertia;
 
 Route::get('admin/main', [AdminController::class, 'index'])->name('admin.main');
 Route::get('admin/students', [StudentCoontroller::class, 'index'])->name('admin.student.index');
+Route::get('admin/students', [StudentCoontroller::class, 'index'])->name('admin.student.index');
+Route::get('admin/students/category', [StudentCoontroller::class, 'category'])->name('admin.student.category');
+
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return Inertia::render('Dashboard');

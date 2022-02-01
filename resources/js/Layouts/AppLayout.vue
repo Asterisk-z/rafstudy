@@ -1,41 +1,9 @@
 <template>
-  <!-- <div>
-    <Head :title="title" />
-
-    <div class="min-h-screen bg-gray-100">
-      <header class="bg-white shadow" v-if="$slots.header">
-        <div class="max-w-7`xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-          <slot name="header"></slot>
-        </div>
-      </header>
-      <main>
-        <slot></slot>
-      </main>
-    </div>
-  </div> -->
-
-  <!-- <div>
-
-    <div class="min-h-screen bg-gray-100">
-      <
-      <header class="bg-white shadow" v-if="$slots.header">
-        <div class="max-w-7`xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-          <slot name="header"></slot>
-        </div>
-      </header>
-
-    </div>
-
-
-  </div> -->
-
-  <div class="wrapper">
-    <Head :title="title" />
     <!-- Sidebar  -->
     <div class="iq-sidebar">
       <div class="iq-sidebar-logo d-flex justify-content-between">
         <a href="#">
-          <img src="images/logo/logo.svg" class="img-fluid" alt="" />
+          <img src="/images/logo/logo.svg" class="img-fluid" alt="my logo" />
           <span>SMS</span>
         </a>
         <div class="iq-menu-bt-sidebar">
@@ -59,7 +27,7 @@
         <div class="iq-sidebar-logo">
           <div class="top-logo">
             <a href="#" class="logo">
-              <img src="images/logo/logo.svg" class="img-fluid" alt="" />
+              <img src="/images/logo/logo.svg" class="img-fluid" alt="" />
               <span>SMS</span>
             </a>
           </div>
@@ -160,7 +128,7 @@
                           <div class="">
                             <img
                               class="avatar-40 rounded"
-                              src="images/user/01.jpg"
+                              src="/images/user/01.jpg"
                               alt=""
                             />
                           </div>
@@ -193,7 +161,7 @@
                 "
               >
                 <img
-                  src="images/user/1.jpg"
+                  src="/images/user/1.jpg"
                   class="img-fluid rounded mr-3"
                   alt="user"
                 />
@@ -298,7 +266,6 @@
         <slot></slot>
       </div>
     </div>
-  </div>
 </template>
 
 <script>

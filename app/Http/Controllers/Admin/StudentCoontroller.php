@@ -18,6 +18,11 @@ class StudentCoontroller extends Controller
         return Inertia::render('Admin/Student/Index');
     }
 
+    public function category()
+    {
+        return Inertia::render('Admin/Student/Category');
+    }
+
     /**
      * Show the form for creating a new resource.
      *
